@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Icon-->
+    
+        <link rel="shortcut icon" href="/img/favicon.ico">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="the blog of sjj118">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="sjj118">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="蒙特卡洛树搜索"/>
+    
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Katex -->
+    <!-- bootcdn -->
+    <link href="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/katex.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/katex.min.js"></script>
+    <script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js"></script>
+    <!-- cdnjs 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js" integrity="sha384-cXpztMJlr2xFXyDSIfRWYSMVCXZ9HeGXvzyKTYrn03rsMAlOtIQVzjty5ULbaP8L" crossorigin="anonymous"></script>
+    -->
+    <!-- staticfile
+    <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.7.1/katex.min.css">
+    <script src="https://cdn.staticfile.org/KaTeX/0.7.1/katex.min.js"></script>
+    <script src="https://cdn.staticfile.org/KaTeX/0.7.1/contrib/auto-render.min.js"></script>
+    -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var mathList = document.getElementsByClassName("markdown-body"),len=mathList.length;
+            for(var i = 0; i < len; i++){
+                renderMathInElement(
+                    mathList[i],
+                    {
+                        delimiters: [
+                            {left: "$$", right: "$$", display: true},
+                            {left: "$", right: "$", display: false},
+                            {left: "\\[", right: "\\]", display: true},
+                            {left: "\\(", right: "\\)", display: false}
+                        ]
+                    }
+                );
+            }
+        });
+    </script>
+
+    <!--highlight.js-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.10.0/styles/atom-one-light.min.css">
+    <script src="https://cdn.staticfile.org/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <!--Github Markdown css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/2.5.0/github-markdown.min.css">
+    <style>
+            .markdown-body {
+                    box-sizing: border-box;
+                    margin: 0 auto;
+                    padding: 45px;
+            }
+
+            @media (max-width: 767px) {
+                    .markdown-body {
+                            padding: 15px;
+                    }
+            }
+    </style>
+
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="the blog of sjj118" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="sjj118&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>蒙特卡洛树搜索 - sjj118&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!--
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+	-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">sjj118's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <!-- Tags -->
+                    <div class="post-tags">
+                        
+                        <a class="tag" href="/tags/#总结" title="总结">总结</a>
+                        
+                        <a class="tag" href="/tags/#作业" title="作业">作业</a>
+                        
+                    </div>
+
+                    <!-- Title & Information -->
+                    <h1>蒙特卡洛树搜索</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by sjj118 on
+                        
+                        
+                            2019-01-04
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="post-body anchor-body markdown-body col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="摘要">摘要</h3>
+<p>在完全信息博弈中，极大极小搜索加上 Alpha-Beta 剪枝是最常用的算法，然而，极大极小搜索必须遍历所有的状态，能搜索的深度非常有限，即便加上 Alpha-Beta 剪枝也没有太大的帮助。因此在这篇文章讲介绍另一种更有效的方法——蒙特卡洛树搜索(MCTS)，它将更加有选择性的进行搜索，因此能取得更好的效果。我们将先介绍蒙特卡洛树搜索的大体框架，然后详细分析 MCTS 中最重要的多臂老虎机算法（MAB）。</p>
+<h3 id="概述">概述</h3>
+<p>完全信息博弈是生活中非常常见的一种博弈，如围棋、象棋等棋类游戏都属于完全信息博弈。完全信息博弈的特点是每个参与者都了解所有其他参与者的特征、策略及得益函数等方面的准确信息。在一个状态总数有限的完全信息博弈中，理论上可以通过搜索得出必胜走法。然而，各种棋类游戏的总状态数往往非常巨大，比如围棋大约有 <span class="math">\(10^172\)</span> 种不同的状态，我们不可能通过搜索将所有的状态遍历一遍。</p>
+<p>极大极小搜索是一种简单但实用的算法。其思路是在搜索达到一定深度时停止搜索，通过估价函数计算当前节点的估价。然后通过递归的方式计算父状态的估价：如果一个状态是对方行棋，则考虑最坏的情况，将子状态中最差的估价作为此状态的估价；如果一个状态是我方行棋，则将子状态中最优的估价作为此状态的估价。最后就可以得到当前所有不同走法的估价，选择最优的一种走法即可。极大极小搜索将估价函数与搜索相结合，解决了无法遍历所有状态的问题，并且一般情况下比直接贪心更优。然而，极大极小搜索本质上还是没有任何启发式的暴力搜索，搜索状态数会随着深度的增加而指数倍的增加，因此在有限的时间内往往无法搜索太多的层数。即便加上 Alpha-Beta 剪枝也只是常数级别的优化，并且其剪枝效果视情况而定。</p>
+<p>蒙特卡洛树搜索是一种简单且通用性较强的算法，它的核心思想是通过随机模拟对局来估计胜率，同时运用多臂老虎机算法来维护一棵搜索树 [1]。搜索树的大小与搜索的时间成正比，搜索树越大，效果越好。所以搜索时间的增加往往能使蒙特卡洛树搜索的效果增加明显，而对极大极小搜索则没有太大的作用。击败围棋世界冠军的 AlphaGo 的核心部分便是蒙特卡洛树搜索，可见其潜力之大。在第 2 部分将介绍蒙特卡洛树搜索的整体框架，第 3 部分将介绍蒙特卡洛树搜索中最重要的多臂老虎机问题。</p>
+<h3 id="蒙特卡洛树搜索算法框架">蒙特卡洛树搜索算法框架</h3>
+<p>蒙特卡洛树搜索通过不断的搜索来构建一棵搜索树，每个节点记录两个值：访问次数和获胜次数。在搜索树的根节点初始化为初始局面后，每次搜索有以下几个步骤：</p>
+<ul>
+<li><p>选择：从根节点开始往下走，每次通过多臂老虎机算法选择一个最优的子节点，直到来到一个存在未扩展子节点的节点，即存在一个还没有被添加到搜索树中的后继状态。</p></li>
+<li><p>扩展：如果当前节点未被完全扩展，则任选一种没试过的走法并创建一个新的子节点。</p></li>
+<li><p>模拟：使用快速走子策略（常用随机）进行自我对弈，并将对弈结果反向传播到所有父节点，即访问次数加一，若获胜则获胜次数也加一。</p></li>
+</ul>
+<p>其中，多臂老虎机算法就是以访问次数与获胜次数为依据来选择最优子节点的。</p>
+<p>在时间限制内尽量多的执行搜索操作，最后选择一个尝试次数最多的走法。因为尝试次数越多，说明获胜概率的估计越准确，并且只有这个走法足够优秀才会获得多臂老虎机算法这么多次的选择。 注意，蒙特卡洛法与蒙特卡洛树搜索不同。蒙特卡洛法也称统计模拟法，它通过不断的随机模拟来估计概率，与上述算法框架的模拟部分类似。</p>
+<p>如果我们直接采用蒙特卡洛法而不构建搜索树，即通过不断随机自我对弈来估算不同走法的胜率，则效果不会很好。因为蒙特卡洛法反应的是状态空间中获胜的局面的比例，不能准确的反应局面的优劣。可能存在一种局面使得大部分的情况会输，但是存在一种必胜的走法。这时蒙特卡洛法就无能为力，而在蒙特卡洛树搜索中，只要有充足的时间，随着搜索树的增大，最终必定会找到那个必胜的走法。</p>
+<p>此外，蒙特卡洛树搜索还可以与估价函数相结合。由于完整的一局游戏可能有几十步甚至上百步，完全采取随机策略模拟的话效果可能很差。因此我们可以不随机完整的一局，可以随机走四五步，然后通过估价函数的正负号来判断胜负。</p>
+<h3 id="多臂老虎机问题multi-armed-bandit">多臂老虎机问题(Multi-Armed Bandit)</h3>
+<p>多臂老虎机是一个有多个拉杆的赌博机，每一个拉杆的中奖几率是不一样的，现在你可以拉若干次拉杆（假设可以拉的次数远大于拉杆个数），如何最大化获得的收益？显然我们可以将拉拉杆操作分为两种：explore，目的是估算不同拉杆的平均收益；exploit，拉平均收益最大的拉杆来获得最大利益。</p>
+<p>可见蒙特卡洛树中选择最优子节点的过程类似于多臂老虎机问题，只不过每个拉杆的收益会随着拉的次数而变化而变化。下面将介绍多臂老虎机问题几种常用算法及它们在蒙特卡洛树搜索中的效果分析比较。</p>
+<h4 id="ε-greedy">ε-Greedy</h4>
+<p>如果在生活中碰到这样的问题，一种很常见的方法就是，explore 几次再 exploit 几次。这是一种简单但也比较有效的方法，更加形式化的描述就是：设定概率 ε，每次以 ε 的概率进行 explore，即随机选择一个拉杆，以 1-ε 的概率进行 exploit，即选择预估收益最大的拉杆。</p>
+<p>具体操作就是，每次拉的时候就抽一个 0 到 1 的随机数，如果这个数大于 ε，则拉预估中奖概率最大的那个拉杆。如果小于 ε，则随机再选择一个拉杆，得到收益后，更新这个拉杆的预估中奖概率，以便于下次选择做参考。</p>
+<p>此外，随着实验次数的增加，预估收益会越来越准确，因此我们希望 explore 越来越少，所以我们可以动态的减少 ε，来获得更好的效果。</p>
+<h4 id="上限置信区间ucb1">上限置信区间（UCB1）</h4>
+<p>由于我们通过过往拉拉杆的结果来估计一个拉杆的收益，因此一个拉杆被拉的次数越多，则其收益估计越准确，因此我们希望在 explore 时尽量选择那些尝试次数较少的拉杆。而 ε-Greedy 算法在 explore 时是随机的，因此我们引入另一种算法——上限置信区间（Upper Confidence Bound）。根据 Chernoff-Hoeffding Bound 理论，真实的期望与预估期望的差距是随着实验次数呈指数级下降的，因此可以引入 UCB 公式：</p>
+<p><span class="math">\[
+X_i=\overline X_i+\lambda \sqrt{\frac{ln(N)}{N_i}}
+\]</span></p>
+<p>其中，<span class="math">\(\overline X_i\)</span> 代表预估收益，<span class="math">\(\lambda\)</span> 是可调整的参数，<span class="math">\(N\)</span> 是总实验次数，<span class="math">\(N_i\)</span> 是该拉杆尝试的次数。<span class="math">\(\lambda\)</span> 越大则越倾向于 explore，<span class="math">\(\lambda\)</span> 越小则越倾向于 exploit。所谓“置信区间”，即根据预估收益和实验次数猜测真实期望有很大概率落在其中的一个区间，在此处即为 <span class="math">\(\left(\overline X_i-\lambda \sqrt{\frac{ln(N)}{N_i}}, \overline X_i+\lambda \sqrt{\frac{ln(N)}{N_i}}\right)\)</span>，<span class="math">\(X_i\)</span> 即为置信区间的上界。</p>
+<p>每次拉拉杆前，计算每个拉杆的置信区间上界，选择那个上界最大的拉杆。在此算法中 explore 与 exploit 被结合在了一起。上限置信区间也是蒙特卡洛树搜索中最常用的方法。</p>
+<h4 id="比较">比较</h4>
+<p>在一般的多臂老虎机问题中，如果选取合适的 ε，ε-Greedy 算法是很难被打败的。然而，在蒙特卡洛树搜索中，每一个节点所面对的多臂老虎机问题都是不同的，很难找到一个统一的参数使得它在面对这些不同多臂老虎机问题时都能有比较好的效果。而 UCB1 算法的优点是它比较稳定，在面对各类问题时都能取得比较好的效果，所以 UCB1 算法更适合在蒙特卡洛树搜索中使用。</p>
+<h3 id="结论">结论</h3>
+<p>在这篇文章，我们介绍了蒙特卡洛树搜索和两种多臂老虎机算法，并对它们进行了分析与比较。蒙特卡洛树搜索能够比较简单的实现并且容易的取得比较好的结果，并且仍有很大的可扩展空间。比如 AlphaGo 便与神经网络相结合，训练了一个局面估价网络与快速走子网络，两者相结合最终击败了围棋世界冠军。同时，如何改进多臂老虎机算法使得它更快的找到更优的走法也是未来值得探索的一个问题。</p>
+<h3 id="参考文献">参考文献</h3>
+<p>[1][https://www.researchgate.net/publication/221112399_Bandit_Based_Monte-Carlo_Planning] Kocsis L , Csaba Szepesvári. Bandit Based Monte-Carlo Planning[J]. Lecture Notes in Computer Science, 2006, 4212:282-293.</p>
+<p>[2][https://link.springer.com/article/10.1023/A:1013689704352] P. Auer, N. Cesa-Bianchi, and P. Fischer. Finite time analysis of the multi-armed bandit problem. Machine Learning, 47(2-3):235–256, 2002.</p>
+
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+
+
+
+
+
+    <hr />
+    <div id="gitalk_thread"></div>
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:i@sjj118.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/sjj118" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/sjj118" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-1x fa-inverse">知</i>
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; 2019 sjj118. All Rights Reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Comments -->
+
+    <!-- Disqus Comments -->
+    
+
+    <!-- Gitment Comments -->
+    
+
+
+    <!-- Gitalk Comments -->
+    
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.js"></script>
+        <script> 
+            const gitalk = new Gitalk({
+                clientID: '5099afc263addd98be13',
+                clientSecret: '79401012bcd210085b59e2d0985924a7f745369e',
+                repo: 'sjj118.github.io',
+                owner: 'sjj118',
+                admin: ['sjj118'],
+                distractionFreeMode: false
+            })
+            gitalk.render('gitalk_thread')
+        </script>
+    
+
+
+<!-- anchor-js -->
+
+    <script src="https://cdn.bootcss.com/anchor-js/4.1.0/anchor.min.js"></script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add('.anchor-body h1, .anchor-body h2, .anchor-body h3, .anchor-body h4, .anchor-body h5, .anchor-body h6');
+    </script>
+
+
+<!-- Side Catalog 
+
+    <script type="text/javascript">
+        function generateCatalog (selector) {
+            var P = $('div.post-body'),a,n,t,l,i,c;
+            a = P.find('h1,h2,h3,h4,h5,h6');
+            a.each(function () {
+                n = $(this).prop('tagName').toLowerCase();
+                i = "#"+$(this).prop('id');
+                t = $(this).text();
+                c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+                l = $('<li class="'+n+'_nav"></li>').append(c);
+                $(selector).append(l);
+            });
+            return true;    
+        }
+        generateCatalog(".catalog-body");
+        // toggle side catalog
+        $(".catalog-toggle").click((function(e){
+            e.preventDefault();
+            $('.side-catalog').toggleClass("fold")
+        }))
+        /*
+         * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+         * Fork by Hux to support padding
+         */
+        async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+            $('.catalog-body').onePageNav({
+                currentClass: "active",
+                changeHash: !1,
+                easing: "swing",
+                filter: "",
+                scrollSpeed: 700,
+                scrollOffset: 0,
+                scrollThreshold: .2,
+                begin: null,
+                end: null,
+                scrollChange: null,
+                padding: 80
+            });
+        });
+    </script>
+
+-->
+
+
+</body>
+
+</html>
