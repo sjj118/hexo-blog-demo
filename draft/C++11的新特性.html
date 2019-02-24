@@ -25,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="sjj118&#39;s Blog"/>
+        <meta property="og:title" content="C++11 的新特性"/>
     
 
     <!-- jquery -->
@@ -99,7 +99,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -110,7 +110,7 @@
 
     <!-- Title -->
     
-    <title>C++ - sjj118&#39;s Blog</title>
+    <title>C++11 的新特性 - sjj118&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
@@ -192,28 +192,82 @@
 
     <!-- Main Content -->
     
-
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1></h1>
+                <div class="post-heading">
+
+                    <!-- Tags -->
+                    <div class="post-tags">
+                        
+                        <a class="tag" href="/tags/#" title=""></a>
+                        
+                        <a class="tag" href="/tags/#" title=""></a>
+                        
+                    </div>
+
+                    <!-- Title & Information -->
+                    <h1>C++11 的新特性</h1>
+                    
+                        <h2 class="post-subheading">
+                            告别 OI，重识 C++
+                        </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by sjj118 on
+                        
+                        
+                            2018-10-23
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Gallery -->
             
-            <div class="archive-before-pagination"></div>
+
+            <!-- Post Main Content -->
+            <div class="post-body anchor-body markdown-body col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>OI 退役后，我学习了解了几款不同的编程语言，虽都是浅尝辄止，仍使我被函数式语言的魅力与现代化编程语言的便捷所震撼。再回头看看用了这么多年的 C++，新学的语言中的各种舒服的功能我好像从来都没有在 C++ 里见过，让我忍不住生出了放弃 C++ 的念头。而在看到 C++11 的新特性后，我才惊讶地发现，原来不少功能都早已被 C++11 支持，是因为 OI 不支持 C++11 才导致我从未了解。如今告别了 OI，我也有机会来学习 C++11 中的新特性，让 C++ 的代码写的更舒服。</p>
+<h2 id="lambda-表达式">lambda 表达式</h2>
+<h2 id="bind">bind</h2>
+<h2 id="constexpr">constexpr</h2>
+<h2 id="random">random</h2>
+<h2 id="基于范围的for循环">基于范围的for循环</h2>
+
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+
+
+
+
+
+    <hr />
+    <div id="gitalk_thread"></div>
+
+
+                </div>
+            
         </div>
     </div>
-</div>
+</article>
+
 
 
     <!-- Footer -->
@@ -314,8 +368,57 @@
 
 <!-- anchor-js -->
 
+    <script src="https://cdn.bootcss.com/anchor-js/4.1.0/anchor.min.js"></script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add('.anchor-body h1, .anchor-body h2, .anchor-body h3, .anchor-body h4, .anchor-body h5, .anchor-body h6');
+    </script>
+
 
 <!-- Side Catalog 
+
+    <script type="text/javascript">
+        function generateCatalog (selector) {
+            var P = $('div.post-body'),a,n,t,l,i,c;
+            a = P.find('h1,h2,h3,h4,h5,h6');
+            a.each(function () {
+                n = $(this).prop('tagName').toLowerCase();
+                i = "#"+$(this).prop('id');
+                t = $(this).text();
+                c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+                l = $('<li class="'+n+'_nav"></li>').append(c);
+                $(selector).append(l);
+            });
+            return true;    
+        }
+        generateCatalog(".catalog-body");
+        // toggle side catalog
+        $(".catalog-toggle").click((function(e){
+            e.preventDefault();
+            $('.side-catalog').toggleClass("fold")
+        }))
+        /*
+         * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+         * Fork by Hux to support padding
+         */
+        async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+            $('.catalog-body').onePageNav({
+                currentClass: "active",
+                changeHash: !1,
+                easing: "swing",
+                filter: "",
+                scrollSpeed: 700,
+                scrollOffset: 0,
+                scrollThreshold: .2,
+                begin: null,
+                end: null,
+                scrollChange: null,
+                padding: 80
+            });
+        });
+    </script>
 
 -->
 
