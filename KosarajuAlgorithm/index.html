@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Kosaraju 算法"/>
+        <meta property="og:title" content="Kosaraju 算法">
     
 
     <!-- jquery -->
@@ -91,21 +91,21 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="the blog of sjj118" />
+        <meta property="og:description" content="the blog of sjj118">
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="sjj118&#39;s Blog"/>
+    <meta property="og:site_name" content="sjj118&#39;s Blog">
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
     
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -113,7 +113,7 @@
     <title>Kosaraju 算法 - sjj118&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -134,7 +134,7 @@
     <![endif]-->
 
     <!-- Gallery -->
-    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet">
 
     <!-- Google Analytics -->
     
@@ -239,7 +239,7 @@
                 <h2 id="算法介绍">算法介绍：</h2>
 <p>Kosaraju 算法是一个求强连通分量的算法。因为某道题要压位求强连通分量所以学习了一下这个算法，不过听说 tarjan 也能压位，然而我没有看懂。。</p>
 <h2 id="算法流程">算法流程：</h2>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>对原图进行 dfs ，记录 dfn 为每个节点的离开时间</li>
 <li>按照 dfn 从大到小的顺序对反图进行 dfs ，能够遍历到的节点作为一个强连通分量。</li>
 </ol>
@@ -250,7 +250,7 @@
 <p>两个点 a 和 b 在同一个强连通分量的充要条件是：能从 a 走到 b 且能从 b 走到 a 。能从 b 走到 a 等价于能在反图中从 a 走到 b 。在反图中 dfs ，首先保证了第二个条件，只要证明在原图中能从 a 走到 b 就行了。</p>
 <p>假设在原图中遍历到点 b 时没有遍历过点 a ，那么由于 b 能走到 a ，所以 a 的 dfn 一定小于 b 的 dfn ，所以一定先遍历点 a 再遍历点 b 。如果经过点 a 和 点 b 时不在同一次遍历中，则 a 的 dfn 一定小于 b 的 dfn ，所以一定是先经过 a ，然后走到 b ，即 a 能走到 b 。</p>
 <h2 id="时间复杂度">时间复杂度：</h2>
-<p>直接运行是 <span class="math">\(O(n+m)\)</span> 的，如果是稠密图可以压位做到 <span class="math">\(O(\frac{n^2}{32})\)</span> 。</p>
+<p>直接运行是 <span class="math inline">\(O(n+m)\)</span> 的，如果是稠密图可以压位做到 <span class="math inline">\(O(\frac{n^2}{32})\)</span> 。</p>
 
             </div>
 
@@ -328,7 +328,7 @@
                         </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; 2019 sjj118. All Rights Reserved.<br></p>
+                <p class="copyright text-muted">Copyright &copy; 2020 sjj118. All Rights Reserved.<br></p>
             </div>
         </div>
     </div>

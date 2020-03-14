@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="民科转动动力学"/>
+        <meta property="og:title" content="民科转动动力学">
     
 
     <!-- jquery -->
@@ -91,21 +91,21 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="the blog of sjj118" />
+        <meta property="og:description" content="the blog of sjj118">
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="sjj118&#39;s Blog"/>
+    <meta property="og:site_name" content="sjj118&#39;s Blog">
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
     
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -113,7 +113,7 @@
     <title>民科转动动力学 - sjj118&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -134,7 +134,7 @@
     <![endif]-->
 
     <!-- Gallery -->
-    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet">
 
     <!-- Google Analytics -->
     
@@ -238,20 +238,20 @@
 <p>由于我不太会积分，所以会用一些不太严谨的方法来定义。并且由于我写的是二维物理引擎，以下讨论只考虑二维情况。本文默认读者已掌握所有高中物理知识。</p>
 <h1 id="基本定义">基本定义</h1>
 <h2 id="刚体">刚体</h2>
-<p>首先，我们假设一个物体是由 <span class="math">\(n\)</span> 个质量极小的质点组成的，第 <span class="math">\(i\)</span> 个质点的质量为 <span class="math">\(m_i\)</span>，坐标为 <span class="math">\(P_i\)</span>，速度为 <span class="math">\(\overrightarrow{v_i}\)</span>，整个物体的质量 <span class="math">\(M=\sum_{i=1}^{n}m_i\)</span>。（于是我就可以不用 <span class="math">\(\int\)</span> 用 <span class="math">\(\sum\)</span> 了）</p>
-<p>刚体就是不会发生形变的物体，那么组成这个刚体的 <span class="math">\(n\)</span> 个质点的相对位置永远不会变化。</p>
+<p>首先，我们假设一个物体是由 <span class="math inline">\(n\)</span> 个质量极小的质点组成的，第 <span class="math inline">\(i\)</span> 个质点的质量为 <span class="math inline">\(m_i\)</span>，坐标为 <span class="math inline">\(P_i\)</span>，速度为 <span class="math inline">\(\overrightarrow{v_i}\)</span>，整个物体的质量 <span class="math inline">\(M=\sum_{i=1}^{n}m_i\)</span>。（于是我就可以不用 <span class="math inline">\(\int\)</span> 用 <span class="math inline">\(\sum\)</span> 了）</p>
+<p>刚体就是不会发生形变的物体，那么组成这个刚体的 <span class="math inline">\(n\)</span> 个质点的相对位置永远不会变化。</p>
 <h2 id="质心">质心</h2>
-<p>质心就是质量的中心，即把质点的坐标以质量为权重进行加权平均，质心的坐标 <span class="math">\(C=\sum_{i=1}^{n}\frac{m_i}{M}P_i\)</span>，移项得 <span class="math">\(\sum_{i=1}^{n}m_{i}\overrightarrow{CP_i}=0\)</span>。</p>
+<p>质心就是质量的中心，即把质点的坐标以质量为权重进行加权平均，质心的坐标 <span class="math inline">\(C=\sum_{i=1}^{n}\frac{m_i}{M}P_i\)</span>，移项得 <span class="math inline">\(\sum_{i=1}^{n}m_{i}\overrightarrow{CP_i}=0\)</span>。</p>
 <p>质心与重心的区别：如果重力场是均匀的，那么重心与质心重合。但如果重力场不均匀，比如离地面近的重力加速度大，离地面远的重力加速度小，那质心与重心就不重合。</p>
 <h1 id="刚体平动">刚体平动</h1>
 <p>刚体平动时，其中各质点的轨迹、速度、加速度全一样，所以刚体的平动可用其质心的运动来代表，即把物体看作一个质量集中在质心上的质点。高中所学的动力学知识都是这方面的，包括力、加速度、动能、动量等，因此不再介绍。</p>
 <h1 id="刚体定轴转动">刚体定轴转动</h1>
 <p>刚体的每一质点都绕同一轴做圆周运动，这种运动叫转动，这个轴叫转动轴。显然转动时，刚体上各个质点的角速度相同。</p>
 <p>刚体定轴转动就是保证刚体转动时的转动轴固定，比如把一个物体用一根光滑的钉子钉住，这时物体的转动就是定轴转动，钉住的那个点就是转动轴。</p>
-<p>设转动轴为点 <span class="math">\(O\)</span>，矢径 <span class="math">\(\overrightarrow{r_i}=\overrightarrow{OP_i}\)</span>，显然每个质点的角速度都相等，设为 <span class="math">\(\omega\)</span>。</p>
+<p>设转动轴为点 <span class="math inline">\(O\)</span>，矢径 <span class="math inline">\(\overrightarrow{r_i}=\overrightarrow{OP_i}\)</span>，显然每个质点的角速度都相等，设为 <span class="math inline">\(\omega\)</span>。</p>
 <h2 id="转动动能">转动动能</h2>
-<p>想象一根绕质心转动的木棒，它的质心不动，它是否具有动能？显然是有动能的，它的每一个不在质心上的质点都有动能，所以我们在考虑转动的时候不能把物体当作一个质点来考虑。转动动能怎么求？很简单，只要把每个质点的动能加起来就行了。令转动动能为 <span class="math">\(E_k\)</span>，那么：</p>
-<p><span class="math">\[
+<p>想象一根绕质心转动的木棒，它的质心不动，它是否具有动能？显然是有动能的，它的每一个不在质心上的质点都有动能，所以我们在考虑转动的时候不能把物体当作一个质点来考虑。转动动能怎么求？很简单，只要把每个质点的动能加起来就行了。令转动动能为 <span class="math inline">\(E_k\)</span>，那么：</p>
+<p><span class="math display">\[
 E_k
 =\sum_{i=1}^{n}\frac{1}{2}m_{i}\left|\overrightarrow{v_{i}}\right|^{2}
 =\frac{1}{2}\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\omega^2
@@ -259,9 +259,9 @@ E_k
 \]</span></p>
 <h2 id="转动惯量">转动惯量</h2>
 <p>我们知道平动时物体的质量大小决定惯性大小，惯性代表了其运动状态改变的难易程度，那么转动中应该也有这么一个决定转动状态改变难易程度的量，这个量就是质量吗？肯定不是，相同质量的质点，离转动轴越远，转动起来应该越难，所以这个量应该还跟质量的分布有关。</p>
-<p>这个量被称为转动惯量。观察转动动能的公式 <span class="math">\(E_k=\frac{1}{2}\omega^2\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\)</span>，我们发现求和符号内的项只与物体本身有关，求和符号外的项只与转速有关，那我们不妨令转动惯量 <span class="math">\(I=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\)</span>，这样，转动动能的公式就变成了 <span class="math">\(E_k=\frac{1}{2}I\omega^2\)</span>，与动能公式有着相同的形式了。</p>
-<p>注意，一个物体以不同的点为转动轴时的转动惯量是不同的，但是，我们有公式可以很方便从以一个点为转动轴时的转动惯量推导出以另一个点为轴时的。令以质心 <span class="math">\(C\)</span> 为转动轴的转动惯量为 <span class="math">\(I_c\)</span>，以点 <span class="math">\(O\)</span> 为转动轴的转动惯量为 <span class="math">\(I_o\)</span>，那么：</p>
-<p><span class="math">\[
+<p>这个量被称为转动惯量。观察转动动能的公式 <span class="math inline">\(E_k=\frac{1}{2}\omega^2\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\)</span>，我们发现求和符号内的项只与物体本身有关，求和符号外的项只与转速有关，那我们不妨令转动惯量 <span class="math inline">\(I=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\)</span>，这样，转动动能的公式就变成了 <span class="math inline">\(E_k=\frac{1}{2}I\omega^2\)</span>，与动能公式有着相同的形式了。</p>
+<p>注意，一个物体以不同的点为转动轴时的转动惯量是不同的，但是，我们有公式可以很方便从以一个点为转动轴时的转动惯量推导出以另一个点为轴时的。令以质心 <span class="math inline">\(C\)</span> 为转动轴的转动惯量为 <span class="math inline">\(I_c\)</span>，以点 <span class="math inline">\(O\)</span> 为转动轴的转动惯量为 <span class="math inline">\(I_o\)</span>，那么：</p>
+<p><span class="math display">\[
 \begin{aligned}
 I_o&amp;=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{OP_{i}}\right|^{2}
 \\&amp;=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{OC}+\overrightarrow{CP_{i}}\right|^{2}
@@ -273,55 +273,55 @@ I_o&amp;=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{OP_{i}}\right|^{2}
 <p>于是我们只要知道以任意一个点为转动轴时的转动惯量，就能快速求出以质心为轴的转动惯量，再而求出以任意点为轴时的转动惯量。</p>
 <h2 id="线性动量">线性动量</h2>
 <p>既然转动时有动能，那有没有动量呢？假设转动轴是质心，那如果直接把每个质点的动量加起来，发现：</p>
-<p><span class="math">\[
+<p><span class="math display">\[
 p=\sum_{i=1}^{n}m_{i}\overrightarrow{v_{i}}=\overrightarrow{\omega}\times\sum_{i=1}^{n}m_{i}\overrightarrow{CP_i}=0
 \]</span></p>
 <p>其实我们高中学的这种动量还可以叫线性动量，物体绕质心的转动不会产生线性动量。如果不绕质心转动，则物体动量的方向一直在变化，改变动量的力便是转动轴提供的向心力。所以，转动时讨论线性动量没有多大意义，还需要另寻有意义的物理量。</p>
 <h2 id="力矩">力矩</h2>
-<p>初中还是小学时学过的杠杆原理：动力×动力臂=阻力×阻力臂。这里的 力×力臂 就是力矩。准确的说，令力的作用点为 <span class="math">\(P\)</span>，转动轴为 <span class="math">\(O\)</span>，力矩 <span class="math">\(M=\overrightarrow{F}\times\overrightarrow{OP}\)</span>（注意这里的 “<span class="math">\(\times\)</span>” 是<a href="https://baike.baidu.com/item/向量积/4601007" target="_blank" rel="noopener">向量叉积</a>）。</p>
+<p>初中还是小学时学过的杠杆原理：动力×动力臂=阻力×阻力臂。这里的 力×力臂 就是力矩。准确的说，令力的作用点为 <span class="math inline">\(P\)</span>，转动轴为 <span class="math inline">\(O\)</span>，力矩 <span class="math inline">\(M=\overrightarrow{F}\times\overrightarrow{OP}\)</span>（注意这里的 “<span class="math inline">\(\times\)</span>” 是<a href="https://baike.baidu.com/item/向量积/4601007" target="_blank" rel="noopener">向量叉积</a>）。</p>
 <p>从杠杆原理中我们可以看出，转动与力矩一定有着密切的关系，力矩就是物体转动状态改变的趋势。</p>
 <h2 id="角加速度">角加速度</h2>
-<p>与加速度类似，我们定义角加速度为角速度的变化量与时间的比值：<span class="math">\(\beta=\frac{\Delta \omega}{\Delta t}\)</span>，单位为 <span class="math">\(rad/s^2\)</span>。当 <span class="math">\(\Delta{t}\)</span> 趋于 <span class="math">\(0\)</span> 时就能得到瞬时角加速度。</p>
+<p>与加速度类似，我们定义角加速度为角速度的变化量与时间的比值：<span class="math inline">\(\beta=\frac{\Delta \omega}{\Delta t}\)</span>，单位为 <span class="math inline">\(rad/s^2\)</span>。当 <span class="math inline">\(\Delta{t}\)</span> 趋于 <span class="math inline">\(0\)</span> 时就能得到瞬时角加速度。</p>
 <h2 id="转动中的牛顿定律">转动中的牛顿定律</h2>
 <p>至此，平动中的质量、力、速度、加速度都在转动中有了对应的概念：转动惯量、力矩、角速度、角加速度。因此，我们猜想平动中的那些定律公式在转动时也成立。我们先来考虑牛顿三大定律。</p>
 <h3 id="第一定律">第一定律</h3>
 <p>不受外力矩作用的物体角速度不变。易证。</p>
 <h3 id="第三定律">第三定律</h3>
-<p>力矩的作用是相互的：质点 <span class="math">\(2\)</span> 对质点 <span class="math">\(1\)</span> 的力矩为 <span class="math">\(M_1\)</span>，质点 <span class="math">\(1\)</span> 对质点 <span class="math">\(2\)</span> 的力矩为 <span class="math">\(M_2\)</span>，则 <span class="math">\(M_1+M_2=0\)</span>。用牛顿第三定律易证。</p>
+<p>力矩的作用是相互的：质点 <span class="math inline">\(2\)</span> 对质点 <span class="math inline">\(1\)</span> 的力矩为 <span class="math inline">\(M_1\)</span>，质点 <span class="math inline">\(1\)</span> 对质点 <span class="math inline">\(2\)</span> 的力矩为 <span class="math inline">\(M_2\)</span>，则 <span class="math inline">\(M_1+M_2=0\)</span>。用牛顿第三定律易证。</p>
 <h3 id="第二定律">第二定律</h3>
-<p>最重要的是第二定律：<span class="math">\(M=I\beta\)</span>。下面是一个不严谨的证明：</p>
+<p>最重要的是第二定律：<span class="math inline">\(M=I\beta\)</span>。下面是一个不严谨的证明：</p>
 <blockquote>
-<p>由第三定律可推知刚体的内力矩守恒，即设第 <span class="math">\(i\)</span> 个质点受到的力矩为 <span class="math">\(M_i\)</span>，则 <span class="math">\(\sum_{i=1}^{n}M_i=M\)</span>。 对于第 <span class="math">\(i\)</span> 个质点，因为沿 <span class="math">\(\overrightarrow{r_i}\)</span> 方向的分力没有用，设 <span class="math">\(\overrightarrow{F_i}\)</span> 为其受到的力在垂直 <span class="math">\(\overrightarrow{r_i}\)</span> 方向上的分力，则 <span class="math">\[
+<p>由第三定律可推知刚体的内力矩守恒，即设第 <span class="math inline">\(i\)</span> 个质点受到的力矩为 <span class="math inline">\(M_i\)</span>，则 <span class="math inline">\(\sum_{i=1}^{n}M_i=M\)</span>。 对于第 <span class="math inline">\(i\)</span> 个质点，因为沿 <span class="math inline">\(\overrightarrow{r_i}\)</span> 方向的分力没有用，设 <span class="math inline">\(\overrightarrow{F_i}\)</span> 为其受到的力在垂直 <span class="math inline">\(\overrightarrow{r_i}​\)</span> 方向上的分力，则 <span class="math display">\[
 \begin{aligned}
 M_i&amp;=\overrightarrow{F_i}\times \overrightarrow{r_i}
 \\&amp;=m_i\overrightarrow{a_i}\times\overrightarrow{r_i}
 \\&amp;=m_i\left|\overrightarrow{r_i}\right|^2\beta
 \end{aligned}
-\]</span> 对所有质点求和，得 <span class="math">\(M=I\beta\)</span>。</p>
+\]</span> 对所有质点求和，得 <span class="math inline">\(M=I\beta\)</span>。</p>
 </blockquote>
 <h2 id="角动量动量矩">角动量/动量矩</h2>
 <p>考虑为什么定义线性动量：</p>
-<p><span class="math">\[
+<p><span class="math display">\[
 F=ma=\frac{m\Delta v}{\Delta t}=\frac{\Delta mv}{\Delta t}
 \]</span></p>
-<p>所以令 <span class="math">\(p=mv\)</span>，当物体不受外力时动量 <span class="math">\(p\)</span> 守恒，并有 <span class="math">\(F\Delta t=\Delta p\)</span>。</p>
+<p>所以令 <span class="math inline">\(p=mv\)</span>，当物体不受外力时动量 <span class="math inline">\(p\)</span> 守恒，并有 <span class="math inline">\(F\Delta t=\Delta p\)</span>。</p>
 <p>类似的我们尝试找到转动时的守恒量：</p>
-<p><span class="math">\[
+<p><span class="math display">\[
 M=I\beta=\frac{I\Delta\omega}{\Delta t}=\frac{\Delta I\omega}{\Delta t}
 \]</span></p>
-<p>所以令 <span class="math">\(L=I\omega\)</span>，当物体不受力矩作用时 <span class="math">\(L\)</span> 守恒，并有 <span class="math">\(M\Delta t=\Delta L\)</span>。</p>
-<p><span class="math">\(L\)</span> 被称作角动量或动量矩，这就是角动量守恒定理。</p>
+<p>所以令 <span class="math inline">\(L=I\omega\)</span>，当物体不受力矩作用时 <span class="math inline">\(L\)</span> 守恒，并有 <span class="math inline">\(M\Delta t=\Delta L\)</span>。</p>
+<p><span class="math inline">\(L\)</span> 被称作角动量或动量矩，这就是角动量守恒定理。</p>
 <h1 id="刚体一般平面运动">刚体一般平面运动</h1>
 <p>刚体的一般平面运动（没有固定轴）可视为质心的平动与以质心为转动轴的定轴转动的结合，即将运动分解为平动与转动进行考虑。</p>
 <p>下面是一般平面运动时的一些定义和公式，都是由平动和定轴转动的公式总结来的：</p>
 <ul>
-<li>质心 <span class="math">\(C=\sum_{i=1}^{n}\frac{m_i}{M}P_i\)</span></li>
-<li>转动惯量 <span class="math">\(I=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\)</span></li>
-<li>合外力 <span class="math">\(F=ma\)</span></li>
-<li>合外力矩 <span class="math">\(M=I\beta\)</span></li>
-<li>总动能 <span class="math">\(E_k=\frac12mv^2+\frac12I\omega^2\)</span></li>
-<li>线性动量 <span class="math">\(p=mv\)</span></li>
-<li>角动量 <span class="math">\(L=I\omega\)</span></li>
+<li>质心 <span class="math inline">\(C=\sum_{i=1}^{n}\frac{m_i}{M}P_i\)</span></li>
+<li>转动惯量 <span class="math inline">\(I=\sum_{i=1}^{n}m_{i}\left|\overrightarrow{r_i}\right|^{2}\)</span></li>
+<li>合外力 <span class="math inline">\(F=ma\)</span></li>
+<li>合外力矩 <span class="math inline">\(M=I\beta\)</span></li>
+<li>总动能 <span class="math inline">\(E_k=\frac12mv^2+\frac12I\omega^2\)</span></li>
+<li>线性动量 <span class="math inline">\(p=mv\)</span></li>
+<li>角动量 <span class="math inline">\(L=I\omega\)</span></li>
 </ul>
 <h1 id="结语">结语</h1>
 <p>以上就是转动动力学中的一些常用公式，我们把质量、能量、动量等一系列概念在转动动力学中找到了对应的定义，通过这些公式，我们就可以像分析平动一样分析转动了。</p>
@@ -404,7 +404,7 @@ M=I\beta=\frac{I\Delta\omega}{\Delta t}=\frac{\Delta I\omega}{\Delta t}
                         </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; 2019 sjj118. All Rights Reserved.<br></p>
+                <p class="copyright text-muted">Copyright &copy; 2020 sjj118. All Rights Reserved.<br></p>
             </div>
         </div>
     </div>

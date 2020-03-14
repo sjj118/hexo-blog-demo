@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="蒙特卡洛树搜索"/>
+        <meta property="og:title" content="蒙特卡洛树搜索">
     
 
     <!-- jquery -->
@@ -91,21 +91,21 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="the blog of sjj118" />
+        <meta property="og:description" content="the blog of sjj118">
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="sjj118&#39;s Blog"/>
+    <meta property="og:site_name" content="sjj118&#39;s Blog">
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
     
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -113,7 +113,7 @@
     <title>蒙特卡洛树搜索 - sjj118&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -134,7 +134,7 @@
     <![endif]-->
 
     <!-- Gallery -->
-    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet">
 
     <!-- Google Analytics -->
     
@@ -237,7 +237,7 @@
                 <h2 id="摘要">摘要</h2>
 <p>在完全信息博弈中，极大极小搜索加上 Alpha-Beta 剪枝是最常用的算法，然而，极大极小搜索必须遍历所有的状态，能搜索的深度非常有限，即便加上 Alpha-Beta 剪枝也没有太大的帮助。因此在这篇文章讲介绍另一种更有效的方法——蒙特卡洛树搜索(MCTS)，它将更加有选择性的进行搜索，因此能取得更好的效果。我们将先介绍蒙特卡洛树搜索的大体框架，然后详细分析 MCTS 中最重要的多臂老虎机算法（MAB）。</p>
 <h2 id="概述">概述</h2>
-<p>完全信息博弈是生活中非常常见的一种博弈，如围棋、象棋等棋类游戏都属于完全信息博弈。完全信息博弈的特点是每个参与者都了解所有其他参与者的特征、策略及得益函数等方面的准确信息。在一个状态总数有限的完全信息博弈中，理论上可以通过搜索得出必胜走法。然而，各种棋类游戏的总状态数往往非常巨大，比如围棋大约有 <span class="math">\(10^172\)</span> 种不同的状态，我们不可能通过搜索将所有的状态遍历一遍。</p>
+<p>完全信息博弈是生活中非常常见的一种博弈，如围棋、象棋等棋类游戏都属于完全信息博弈。完全信息博弈的特点是每个参与者都了解所有其他参与者的特征、策略及得益函数等方面的准确信息。在一个状态总数有限的完全信息博弈中，理论上可以通过搜索得出必胜走法。然而，各种棋类游戏的总状态数往往非常巨大，比如围棋大约有 <span class="math inline">\(10^172\)</span> 种不同的状态，我们不可能通过搜索将所有的状态遍历一遍。</p>
 <p>极大极小搜索是一种简单但实用的算法。其思路是在搜索达到一定深度时停止搜索，通过估价函数计算当前节点的估价。然后通过递归的方式计算父状态的估价：如果一个状态是对方行棋，则考虑最坏的情况，将子状态中最差的估价作为此状态的估价；如果一个状态是我方行棋，则将子状态中最优的估价作为此状态的估价。最后就可以得到当前所有不同走法的估价，选择最优的一种走法即可。极大极小搜索将估价函数与搜索相结合，解决了无法遍历所有状态的问题，并且一般情况下比直接贪心更优。然而，极大极小搜索本质上还是没有任何启发式的暴力搜索，搜索状态数会随着深度的增加而指数倍的增加，因此在有限的时间内往往无法搜索太多的层数。即便加上 Alpha-Beta 剪枝也只是常数级别的优化，并且其剪枝效果视情况而定。</p>
 <p>蒙特卡洛树搜索是一种简单且通用性较强的算法，它的核心思想是通过随机模拟对局来估计胜率，同时运用多臂老虎机算法来维护一棵搜索树 [1]。搜索树的大小与搜索的时间成正比，搜索树越大，效果越好。所以搜索时间的增加往往能使蒙特卡洛树搜索的效果增加明显，而对极大极小搜索则没有太大的作用。击败围棋世界冠军的 AlphaGo 的核心部分便是蒙特卡洛树搜索，可见其潜力之大。在第 2 部分将介绍蒙特卡洛树搜索的整体框架，第 3 部分将介绍蒙特卡洛树搜索中最重要的多臂老虎机问题。</p>
 <h2 id="蒙特卡洛树搜索算法框架">蒙特卡洛树搜索算法框架</h2>
@@ -260,10 +260,10 @@
 <p>此外，随着实验次数的增加，预估收益会越来越准确，因此我们希望 explore 越来越少，所以我们可以动态的减少 ε，来获得更好的效果。</p>
 <h3 id="上限置信区间ucb1">上限置信区间（UCB1）</h3>
 <p>由于我们通过过往拉拉杆的结果来估计一个拉杆的收益，因此一个拉杆被拉的次数越多，则其收益估计越准确，因此我们希望在 explore 时尽量选择那些尝试次数较少的拉杆。而 ε-Greedy 算法在 explore 时是随机的，因此我们引入另一种算法——上限置信区间（Upper Confidence Bound）。根据 Chernoff-Hoeffding Bound 理论，真实的期望与预估期望的差距是随着实验次数呈指数级下降的，因此可以引入 UCB 公式：</p>
-<p><span class="math">\[
+<p><span class="math display">\[
 X_i=\overline X_i+\lambda \sqrt{\frac{ln(N)}{N_i}}
 \]</span></p>
-<p>其中，<span class="math">\(\overline X_i\)</span> 代表预估收益，<span class="math">\(\lambda\)</span> 是可调整的参数，<span class="math">\(N\)</span> 是总实验次数，<span class="math">\(N_i\)</span> 是该拉杆尝试的次数。<span class="math">\(\lambda\)</span> 越大则越倾向于 explore，<span class="math">\(\lambda\)</span> 越小则越倾向于 exploit。所谓“置信区间”，即根据预估收益和实验次数猜测真实期望有很大概率落在其中的一个区间，在此处即为 <span class="math">\(\left(\overline X_i-\lambda \sqrt{\frac{ln(N)}{N_i}}, \overline X_i+\lambda \sqrt{\frac{ln(N)}{N_i}}\right)\)</span>，<span class="math">\(X_i\)</span> 即为置信区间的上界。</p>
+<p>其中，<span class="math inline">\(\overline X_i\)</span> 代表预估收益，<span class="math inline">\(\lambda\)</span> 是可调整的参数，<span class="math inline">\(N\)</span> 是总实验次数，<span class="math inline">\(N_i\)</span> 是该拉杆尝试的次数。<span class="math inline">\(\lambda\)</span> 越大则越倾向于 explore，<span class="math inline">\(\lambda\)</span> 越小则越倾向于 exploit。所谓“置信区间”，即根据预估收益和实验次数猜测真实期望有很大概率落在其中的一个区间，在此处即为 <span class="math inline">\(\left(\overline X_i-\lambda \sqrt{\frac{ln(N)}{N_i}}, \overline X_i+\lambda \sqrt{\frac{ln(N)}{N_i}}\right)\)</span>，<span class="math inline">\(X_i\)</span> 即为置信区间的上界。</p>
 <p>每次拉拉杆前，计算每个拉杆的置信区间上界，选择那个上界最大的拉杆。在此算法中 explore 与 exploit 被结合在了一起。上限置信区间也是蒙特卡洛树搜索中最常用的方法。</p>
 <h3 id="比较">比较</h3>
 <p>在一般的多臂老虎机问题中，如果选取合适的 ε，ε-Greedy 算法是很难被打败的。然而，在蒙特卡洛树搜索中，每一个节点所面对的多臂老虎机问题都是不同的，很难找到一个统一的参数使得它在面对这些不同多臂老虎机问题时都能有比较好的效果。而 UCB1 算法的优点是它比较稳定，在面对各类问题时都能取得比较好的效果，所以 UCB1 算法更适合在蒙特卡洛树搜索中使用。</p>
@@ -349,7 +349,7 @@ X_i=\overline X_i+\lambda \sqrt{\frac{ln(N)}{N_i}}
                         </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; 2019 sjj118. All Rights Reserved.<br></p>
+                <p class="copyright text-muted">Copyright &copy; 2020 sjj118. All Rights Reserved.<br></p>
             </div>
         </div>
     </div>

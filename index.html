@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="sjj118&#39;s Blog"/>
+        <meta property="og:title" content="sjj118&#39;s Blog">
     
 
     <!-- jquery -->
@@ -91,21 +91,21 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="the blog of sjj118" />
+        <meta property="og:description" content="the blog of sjj118">
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="sjj118&#39;s Blog"/>
+    <meta property="og:site_name" content="sjj118&#39;s Blog">
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="website">
     
 
     <!--Page Cover-->
     
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -113,7 +113,7 @@
     <title>sjj118&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -134,7 +134,7 @@
     <![endif]-->
 
     <!-- Gallery -->
-    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet">
 
     <!-- Google Analytics -->
     
@@ -212,19 +212,24 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
                 <div class="post-preview">
-                    <a href="/CanAIBeatHuman/">
+                    <a href="/Mathematical_Analysis_of_Algorithms/">
                         <h2 class="post-title">
-                            人工智能能否超越人类智能？
+                            Mathematical Analysis of Algorithms 笔记
                         </h2>
                         
-                        <div class="post-content">两年前，AlphaGo 在乌镇击败围棋世界冠军柯洁，人...</div>
+                        <div class="post-content">《Mathematical Analysis of Algorithms》是著名计算机科学家 Donald Knuth 在 1971 年发表的一篇论文，这篇论文的核心是对两个问题的算法分析，其中的运用的技巧是最值得我们关注的内容。
+引言
+算法分析可以分成两大类：
+
+一、分析一个算法：对一个确定的算法，分析其时间复杂度、空间复杂度，在最坏情况下或平均情况下。
+二、分析一类算法：对一个确定的问题，考虑......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
                     
                         Posted by sjj118 on
                     
-                    2019-02-23
+                    2020-03-13
                     </p>
                 </div>
                 <hr>
@@ -236,7 +241,7 @@
                         </h2>
                         
                         <div class="post-content">摘要
-在完全信息博弈中，极大极小搜索加上 Alpha-...</div>
+在完全信息博弈中，极大极小搜索加上 Alpha-Beta 剪枝是最常用的算法，然而，极大极小搜索必须遍历所有的状态，能搜索的深度非常有限，即便加上 Alpha-Beta 剪枝也没有太大的帮助。因此在这篇文章讲介绍另一种更有效的方法——蒙特卡洛树搜索(MCTS)，它将更加有选择性的进行搜索，因此能取得更好的效果。我们将先介绍蒙特卡洛树搜索的大体框架，然后详细分析 MCTS 中最重要的多臂老虎机......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -249,30 +254,16 @@
                 <hr>
             
                 <div class="post-preview">
-                    <a href="/ResearchMethodSummary/">
-                        <h2 class="post-title">
-                            结课总结：前沿计算研究方法
-                        </h2>
-                        
-                        <div class="post-content">这学期的计算机前沿研究方法讲座让我有机会一窥科研的面目...</div>
-                    </a>
-                    <p class="post-meta">
-                    <!-- Date and Author -->
-                    
-                        Posted by sjj118 on
-                    
-                    2018-12-26
-                    </p>
-                </div>
-                <hr>
-            
-                <div class="post-preview">
                     <a href="/FolkRotationalDynamics/">
                         <h2 class="post-title">
                             民科转动动力学
                         </h2>
                         
-                        <div class="post-content">最近开始写物理引擎，才发现高中物理对转动的问题一点都没...</div>
+                        <div class="post-content">最近开始写物理引擎，才发现高中物理对转动的问题一点都没有提到。高中物理中的运动都是平动，而现实中更多的情况下都会发生转动。于是我结合自己的思考并查阅了一些资料后进行了一些总结。
+由于我不太会积分，所以会用一些不太严谨的方法来定义。并且由于我写的是二维物理引擎，以下讨论只考虑二维情况。本文默认读者已掌握所有高中物理知识。
+基本定义
+刚体
+首先，我们假设一个物体是由 \(n\) 个质量极小的质点组成的......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -291,7 +282,8 @@
                         </h2>
                         
                         <div class="post-content">沉迷建博客不可自拔
-由于对 Ruby（Jekyll 基...</div>
+由于对 Ruby（Jekyll 基于 Ruby）的不熟悉，以及对 Node.js（Hexo 基于 Node.js）的莫名亲近感，几个月前我就开始准备把博客换成 Hexo 的。
+然后发现 Hexo 居然有一个跟我原来博客很像的主题，不过没有原来博客那么强大丰富的功能，我就打算基于这个主题自己把各种功能添加起来（挖了个巨坑）。后来填了几天的坑，完善了不少功能，然后就填不动了，就一直......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -309,7 +301,8 @@
                             新评论插件
                         </h2>
                         
-                        <div class="post-content">多说倒了之后就换了 Disqus，昨天 kcz 告诉我...</div>
+                        <div class="post-content">多说倒了之后就换了 Disqus，昨天 kcz 告诉我看不到我博客上的评论框才发现 Disqus 貌似被墙了，便打算再找一个评论插件。
+先是在知乎上看到了 Gitment。由于这是个静态博客，只能把评论存到第三方平台上。而这个评论插件用 Github 帐号登录，然后把评论就会变成在 Github Issue 回复，插件再读取 Issue 中的内容显示到博客上。反正我博客也是放到 Github 上的......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -327,7 +320,11 @@
                             多项式讲课课件
                         </h2>
                         
-                        <div class="post-content">本来打算弄个 ppt 的，准备写的时候发现这个课件里要...</div>
+                        <div class="post-content">本来打算弄个 ppt 的，准备写的时候发现这个课件里要写很多公式，于是就顺便学了一下用 Latex 写 slide。
+课件pdf
+课件源代码
+做课件好累啊，做了两个晚上的课件一个小时就讲完了。。
+......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -350,7 +347,10 @@
                             </h3>
                         
                         <div class="post-content">0x0
-2017 年 4 月 28 日下午，我坐在回温...</div>
+2017 年 4 月 28 日下午，我坐在回温州的车上，还在思考着上午比赛的题目。突然，我想到了我第三题程序的一个 bug 。进省队的最后一丝希望，破灭了。
+曾看过很多人写的退役感言，那时觉得退役还很远，没想到转眼间便到了退役的时候。发现我 OI 生涯的很多细节都记不清了，再过几年可能都忘了吧，于是就写了篇流水账记录一下。
+0x1
+2012 年的暑假，我正在洞头旅游。我妈接了一个电话后，告......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -369,7 +369,15 @@
                         </h2>
                         
                         <div class="post-content">算法介绍：
-Kosaraju 算法是一个求强连通分量的...</div>
+Kosaraju 算法是一个求强连通分量的算法。因为某道题要压位求强连通分量所以学习了一下这个算法，不过听说 tarjan 也能压位，然而我没有看懂。。
+算法流程：
+
+对原图进行 dfs ，记录 dfn 为每个节点的离开时间
+按照 dfn 从大到小的顺序对反图进行 dfs ，能够遍历到的节点作为一个强连通分量。
+
+算法证明：
+充分性：
+若两个点 a 和 b 在同一个强连通分量内，则步骤......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -389,7 +397,11 @@ Kosaraju 算法是一个求强连通分量的...</div>
                         
                         <div class="post-content">已弃坑
 1A EllysTree
-Descriptio...</div>
+Description
+给出一棵有根树，每次跳跃可以跳向当前节点的祖先或者是它子树中的节点。要求从根节点开始，经过每个节点一次且仅一次，求字典序最小的路径，或者说路径不存在。
+Solution
+假如没有字典序最小的限制，我们可以按照这样的策略：每次跳向能跳的节点中深度最大的节点。这个策略保证如果有解，那么这个策略一定能找到解。于是这个策略可以判断是否有解。
+事实上......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -412,7 +424,8 @@ Descriptio...</div>
                             </h3>
                         
                         <div class="post-content">欢迎来到我的新博客
-本博客基于 Jekyll + Gi...</div>
+本博客基于 Jekyll + Github Pages，主题 fork 自 hux 。
+一年前第一次建博客时，因为 wordpress 比较有名，所以打算用它建站，考虑过用 Github Pages 作主机，但 github 不支持数据库，只好租了个 36 元／年的虚拟主机。后来开始使用 markdown ，但一直没有找到比较优雅的在 wordpress 上通过 markdow......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -433,7 +446,20 @@ Descriptio...</div>
                         <div class="post-content">如何保证正确
 
 数组尽量开大（不要爆空间）
-多组数据的...</div>
+多组数据的题对拍也要造多组数据的数据
+对拍很重要
+对拍也不能保证完全正确
+肉眼检查也很重要
+long long保平安
+
+一些检查的技巧
+
+拷贝一份代码，将数组全都开大，跟原代码对拍，以检查数组越界
+分块题将两个块大小不同的程序对拍
+
+如何想出难题
+
+想题目的广度很重要，如果在推导的过程中发现不对劲，要立即停下来重新看一看题目，或是检查一下推导中有没有考虑......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -452,7 +478,18 @@ Descriptio...</div>
                         </h2>
                         
                         <div class="post-content">一些零散的总结
-计数问题是OI中很难的一类问题，往往能...</div>
+计数问题是OI中很难的一类问题，往往能够考察选手的多方面能力。
+计数问题的常见解法有以下几种：
+
+递推与动规
+容斥
+组合数
+生成函数
+
+一道题目往往需要结合多种方法才能解决。
+很多题目通过比较复杂的式子推导后往往能得出比较简洁的答案，所以找规律也是一种解题方法。
+常用公式
+组合数的重要公式：\(\sum_{k=0}^s\binom{k}{n}\binom{s-k}{m}=\bino......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -470,7 +507,12 @@ Descriptio...</div>
                             图的匹配专题
                         </h2>
                         
-                        <div class="post-content">对于二分图匹配的题目，我之前一直都是用网络流解决的，但...</div>
+                        <div class="post-content">对于二分图匹配的题目，我之前一直都是用网络流解决的，但是，二分图匹配的其它算法也有着自己的特点，在解决图的匹配问题时有时能够更简洁，更灵活，这些算法有时也能给我们解题带来启发。
+二分图最大匹配
+二分图最大匹配的常用算法是匈牙利算法，代码非常简洁：
+int find(int k){
+    for(int p=head[k];p;p=next[p])if(!used[to[p]]){
+       ......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -489,7 +531,9 @@ Descriptio...</div>
                         </h2>
                         
                         <div class="post-content">Conspiracy
-可以发现这是一个2-sat模型，...</div>
+可以发现这是一个2-sat模型，单2-sat只能求合法方案，不能求方案数。发现一个方案每个部分的人都最多有一个到另一个部分去，所以就可以枚举哪些人换位置判断是否合法了。
+Lollipop
+一个比较暴力的想法就是每个询问都利用单调性直接找区间，这样是\(O(nm)\)的。另a为原数组，s为其前缀和，我们发现在q&lt;=s[n]时，如果固定左端点l为1，那么一定能找到一个右端点......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -507,7 +551,9 @@ Descriptio...</div>
                             Hello World
                         </h2>
                         
-                        <div class="post-content">此博客首次建立于2016年1月，湖南师大附中元旦培训期...</div>
+                        <div class="post-content">此博客首次建立于2016年1月，湖南师大附中元旦培训期间。
+早期的文章由于太傻已经被我基本删除。
+......</div>
                     </a>
                     <p class="post-meta">
                     <!-- Date and Author -->
@@ -583,7 +629,7 @@ Descriptio...</div>
                         </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; 2019 sjj118. All Rights Reserved.<br></p>
+                <p class="copyright text-muted">Copyright &copy; 2020 sjj118. All Rights Reserved.<br></p>
             </div>
         </div>
     </div>

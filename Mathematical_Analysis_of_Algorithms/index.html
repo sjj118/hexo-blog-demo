@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Icon-->
+    
+        <link rel="shortcut icon" href="/img/favicon.ico">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="the blog of sjj118">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="sjj118">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Mathematical Analysis of Algorithms 笔记">
+    
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Katex -->
+    <!-- bootcdn -->
+    <link href="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/katex.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/katex.min.js"></script>
+    <script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js"></script>
+    <!-- cdnjs 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js" integrity="sha384-cXpztMJlr2xFXyDSIfRWYSMVCXZ9HeGXvzyKTYrn03rsMAlOtIQVzjty5ULbaP8L" crossorigin="anonymous"></script>
+    -->
+    <!-- staticfile
+    <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.7.1/katex.min.css">
+    <script src="https://cdn.staticfile.org/KaTeX/0.7.1/katex.min.js"></script>
+    <script src="https://cdn.staticfile.org/KaTeX/0.7.1/contrib/auto-render.min.js"></script>
+    -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var mathList = document.getElementsByClassName("markdown-body"),len=mathList.length;
+            for(var i = 0; i < len; i++){
+                renderMathInElement(
+                    mathList[i],
+                    {
+                        delimiters: [
+                            {left: "$$", right: "$$", display: true},
+                            {left: "$", right: "$", display: false},
+                            {left: "\\[", right: "\\]", display: true},
+                            {left: "\\(", right: "\\)", display: false}
+                        ]
+                    }
+                );
+            }
+        });
+    </script>
+
+    <!--highlight.js-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.10.0/styles/atom-one-light.min.css">
+    <script src="https://cdn.staticfile.org/highlight.js/9.10.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <!--Github Markdown css-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/2.5.0/github-markdown.min.css">
+    <style>
+            .markdown-body {
+                    box-sizing: border-box;
+                    margin: 0 auto;
+                    padding: 45px;
+            }
+
+            @media (max-width: 767px) {
+                    .markdown-body {
+                            padding: 15px;
+                    }
+            }
+    </style>
+
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="the blog of sjj118">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="sjj118&#39;s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>Mathematical Analysis of Algorithms 笔记 - sjj118&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!--
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+	-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">sjj118's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <!-- Tags -->
+                    <div class="post-tags">
+                        
+                        <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
+                        
+                        <a class="tag" href="/tags/#算法设计与分析" title="算法设计与分析">算法设计与分析</a>
+                        
+                    </div>
+
+                    <!-- Title & Information -->
+                    <h1>Mathematical Analysis of Algorithms 笔记</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by sjj118 on
+                        
+                        
+                            2020-03-13
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="post-body anchor-body markdown-body col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>《Mathematical Analysis of Algorithms》是著名计算机科学家 Donald Knuth 在 1971 年发表的一篇论文，这篇论文的核心是对两个问题的算法分析，其中的运用的技巧是最值得我们关注的内容。</p>
+<h2 id="引言">引言</h2>
+<p>算法分析可以分成两大类：</p>
+<ul>
+<li><p>一、分析一个算法：对一个确定的算法，分析其时间复杂度、空间复杂度，在最坏情况下或平均情况下。</p></li>
+<li><p>二、分析一类算法：对一个确定的问题，考虑所有解决这个问题的算法，找出哪一个最好，或者找出所有这类算法的复杂度下界。</p></li>
+</ul>
+<p>第一类分析的历史较久，对第二类分析的研究起步稍晚。显然，第二类分析更加强大，因为可以同时分析无穷多个算法，然而，我们往往很难同时分析一个问题的所有算法，不得不把可能的算法限定在一定范围内。我们必须确定哪些操作是允许的，一旦定义有变，最优算法就会变化。比如基于比较的排序算法的复杂度下界是 <span class="math inline">\(O(n\log n)\)</span>，但基数排序可以更优。</p>
+<p>第二类分析没有取代第一类分析的主要原因有两个。一方面，为了进行分析我们必须建立一个简单的复杂度模型与算法模型，但这样的简单定义得到的最优算法往往不实用。另一方面，即便在简单的模型下，第二类分析仍然很困难。</p>
+<p>因此，第一类分析在实用的角度上更重要，它可以考虑到一个算法的所有因素对复杂度的影响。并且，研究第一类分析的过程也能够给计算机科学提供更多的经验、技术与工具。</p>
+<p>接下来，将对两个算法进行分析，它们不是最重要的算法，但也不是完全没用，分析的过程也包含着一些重要的想法。</p>
+<h2 id="内部置换in-situ-permutation">内部置换(In Situ Permutation)</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个数组 <span class="math inline">\((x_1,x_2,\cdots,x_n)\)</span> 与一个 <span class="math inline">\(\{1,2,\cdots,n\}\)</span> 的只读的排列 <span class="math inline">\(p\)</span>，使用 <span class="math inline">\(O(1)\)</span> 的额外空间将数组内容替换为 <span class="math inline">\(\left(x_{p(1)},x_{p(2)},\cdots,x_{p(n)}\right)\)</span>，即只允许利用若干个辅助变量，在数组 <span class="math inline">\(x\)</span> 内部按照排列 <span class="math inline">\(p\)</span> 进行置换。</p>
+<h3 id="算法描述">算法描述</h3>
+<p>首先，介绍一个关于排列与置换很常用的模型。如果有 <span class="math inline">\(n\)</span> 个点，每个点 <span class="math inline">\(k\)</span> 有一条连向点 <span class="math inline">\(p(k)\)</span> 的有向边，那么这个图中每个点的出度和入度都为 <span class="math inline">\(1\)</span>，因此这个图是由若干个环组成的。我们称一个环中编号最小的那个节点为环头，即满足 <span class="math inline">\(k&lt;p(k),k&lt;p(p(k)),k&lt;p(p(p(k))),\cdots\)</span> 的点 <span class="math inline">\(k\)</span>。算法的主要步骤就是对于每一个点，判断它是不是环头，如果是环头的话，则沿着这个环进行置换，即临时记录下 <span class="math inline">\(x_k\)</span>，令 <span class="math inline">\(x_k=x_{p(k)},x_{p(k)}=x_{p(p(x))},\cdots\)</span>，直到绕环一圈回到环头。算法的伪代码如下，其中每一行被执行的次数被标在右侧：</p>
+<figure>
+<img src="/img/in%20situ%20pseudo.png" alt><figcaption>in situ pseudo</figcaption>
+</figure>
+<h3 id="复杂度分析">复杂度分析</h3>
+<p>为了确定该算法的时间复杂度，需要对 <span class="math inline">\(a,b,c\)</span> 进行分析。其中 <span class="math inline">\(a\)</span> 代表判断环头所费的总时间，<span class="math inline">\(b\)</span> 代表环的个数。由于数组 <span class="math inline">\(x\)</span> 的每一项只会被赋值一次，结合伪代码第 10、11 行，可知 <span class="math inline">\(b+c=n\)</span>，因此决定算法复杂度的因素只剩下 <span class="math inline">\(a\)</span> 了。考虑最坏情况，若排列 <span class="math inline">\(p=(2,3,\cdots,n,1)\)</span>，则只有一个环，对于每个点都必须不断向后查找直到回到点 <span class="math inline">\(1\)</span> 才能判断出是不是环头，因此 <span class="math inline">\(a=(n-1)+(n-2)+\cdots+1=\frac{1}{2}(n^2-n)\)</span>。在后面我们会看到，如果提供排列 <span class="math inline">\(p\)</span> 的反函数 <span class="math inline">\(p^{-1}\)</span>，则可以对算法作出一些小修改使得最坏复杂度达到 <span class="math inline">\(O(n\log n)\)</span>。虽然这个算法在最坏情况下的复杂度达到 <span class="math inline">\(O(n^2)\)</span>，平均情况下的复杂度仍非常重要。接下来我们将对 <span class="math inline">\(a,b\)</span> 的均值和方差进行分析。（为什么要分析 <span class="math inline">\(b\)</span> ？）</p>
+<p>在分析之前，先介绍一种考虑排列上的环时常用的变换，它是一个排列到排列的双射。对于一个排列中的每个环，我们从环头开始依次写下它的元素，并用括号括起来，然后我们按照环头从大到小排序。例如，对于排列 <span class="math inline">\(p=(8,2,7,1,6,9,3,4,5)\)</span>，它的环有 <span class="math inline">\((184)(2)(37)(569)\)</span>，排序后为 <span class="math inline">\((569)(37)(2)(184)\)</span>。最后，我们发现可以把括号去掉，因为环头一定是其前缀中最小的元素，得到 <span class="math inline">\(569372184\)</span>。由此，我们得到了一个新的排列，它与原排列是一一对应的。下面我们假设排列 <span class="math inline">\((p(1),p(2),\cdots,p(n))\)</span> 被这个变换变成了 <span class="math inline">\((q(1),q(2),\cdots,q(n))\)</span>。</p>
+<h3 id="对-b-的分析">对 <span class="math inline">\(b\)</span> 的分析</h3>
+<p><span class="math inline">\(b\)</span> 的值，即环的个数，即环头个数，即满足 <span class="math inline">\(\displaystyle q(j)=\min_{1\leqslant i\leqslant j}q(i)\)</span> 的 <span class="math inline">\(j\)</span> 的个数。环头个数为 <span class="math inline">\(k\)</span> 的排列个数为第一类斯特林数 <span class="math inline">\(\genfrac{[}{]}{0}{}{n}{k}\)</span>（这就是第二类斯特林数的定义）。接下来证明 <span class="math inline">\(b\)</span> 的期望值是调和级数 <span class="math inline">\(H_n=1+\frac{1}{2}+\cdots+\frac{1}{n}\)</span>。我们设 <span class="math display">\[
+x_j=\left\{\begin{array}{ll}
+1,&amp;\text{ if } q(i)&gt;q(j) \text{ for } 1\leqslant i&lt;j \text{ ; }\\
+0,&amp;\text{ otherwise. }\\
+\end{array}\right.
+\]</span> 则 <span class="math inline">\(\displaystyle b=\sum_{j=1}^n x_j\)</span>，则 <span class="math inline">\(\displaystyle E(b)=\sum_{j=1}^n E(x_j)\)</span>，而 <span class="math inline">\(\displaystyle E(x_j)=\frac{1}{j}\)</span>，因此 <span class="math inline">\(E(b)=H_n\)</span>。</p>
+<p>接下来证明 <span class="math inline">\(b\)</span> 的方差为 <span class="math inline">\(H_n-H_n^{(2)}\)</span>，其中 <span class="math inline">\(H_n^{(2)}=1+\frac{1}{4}+\cdots+\frac{1}{n^2}\)</span>。<span class="math inline">\(Var(b)=E(b-E(b))^2=E(b^2)-E^2(b)\)</span>，因此只要求出 <span class="math inline">\(\displaystyle E(b^2)=E\left(\sum_{j=1}^n x_j^2+2\sum_{1\leqslant i&lt;j\leqslant n}x_i x_j\right)=\sum_{j=1}^nE(x_j^2)+2\sum_{1\leqslant i&lt;j\leqslant n}E(x_ix_j)\)</span>，其中 <span class="math inline">\(x_j^2=x_j\)</span>，又有 <span class="math inline">\(\displaystyle E(x_ix_j)=\frac{1}{ij}\)</span>，因此 <span class="math inline">\(\displaystyle E(b^2)=H_n+2\sum_{1\leqslant i&lt;j\leqslant n}\frac{1}{ij}\)</span>，而 <span class="math inline">\(E^2(b)=H_n^2\)</span><span class="math inline">\(=H_n^{(2)}+2\sum_{1\leqslant i&lt;j\leqslant n}\frac{1}{ij}\)</span>，因此 <span class="math inline">\(Var(b)=H_n-H_n^{(2)}\)</span>。</p>
+<h3 id="对-a-的分析">对 <span class="math inline">\(a\)</span> 的分析</h3>
+<p><span class="math inline">\(a\)</span> 的值的分析更加困难，但它也是决定算法复杂度的核心。对于点 <span class="math inline">\(i\)</span>，我们依次查看 <span class="math inline">\(q(i+1),q(i+1),\cdots\)</span> 是否大于 <span class="math inline">\(q(i)\)</span>，直到找到最小的 <span class="math inline">\(r\)</span> 使得 <span class="math inline">\(q(i+r)&lt;q(i)\)</span>，则点 <span class="math inline">\(i\)</span> 对 <span class="math inline">\(a\)</span> 的贡献为 <span class="math inline">\(r-1\)</span>。类似的我们对 <span class="math inline">\(1\leqslant i&lt;j\leqslant n\)</span> 定义 <span class="math display">\[
+y_{ij}=\left\{\begin{array}{ll}
+1,&amp;\text{ if } q(k)&gt;q(i) \text{ for } i&lt;k\leqslant j \text{ ; }\\
+0,&amp;\text{ otherwise. }\\
+\end{array}\right.
+\]</span> 则 <span class="math inline">\(\displaystyle a=\sum_{1\leqslant i&lt;j\leqslant n}y_{ij}\)</span>，则 <span class="math inline">\(\displaystyle E(a)=\sum_{1\leqslant i&lt;j\leqslant n}E(y_{ij})\)</span>，而 <span class="math inline">\(E(y_{ij})=\frac{1}{j-i+1}\)</span>，因此 <span class="math inline">\(\displaystyle E(a)=\sum_{1\leqslant i&lt;j\leqslant n}\frac{1}{j-i+1}=\sum_{r=2}^n\frac{n-r+1}{r}=(n+1)(H_n-1)-(n-1)=(n+1)H_n-2n\)</span>。</p>
+<p><span class="math inline">\(Var(a)\)</span> 计算类似，但过程太复杂此处略过，最终结果为 <span class="math inline">\(Var(a)=2n^2-(n+1)^2H_n^{(2)}-(n+1)H_n+4n\)</span>。</p>
+<h3 id="优化的效果">优化的效果</h3>
+<p>根据以上分析，算法的平均时间复杂度为 <span class="math inline">\(O(n\log n)\)</span>，虽然最坏情况下为 <span class="math inline">\(O(n^2)\)</span>，但由于方差不大，最坏情况出现的概率不大。</p>
+<p>我们对 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span> 的分析不仅能帮我们得到算法的复杂度，还可以用来考察算法优化的效果。考虑这样一个优化，我们有一个计数器 <code>tally</code> 初始值为 <span class="math inline">\(n\)</span>，每当我们对数组 <span class="math inline">\(x\)</span> 赋值，就将 <code>tally</code> 减一，因为 <span class="math inline">\(x\)</span> 会被赋值 <span class="math inline">\(n\)</span> 次，当 <code>tally</code> 为 <span class="math inline">\(0\)</span> 时我们可以提前结束算法。添加这个优化我们需要执行 <span class="math inline">\(n\)</span> 次 <code>tally--</code> 与<span class="math inline">\(b\approx \log n\)</span> 次 <code>if(tally==0)</code> ，而我们省略了多少操作呢？执行完最后一个环的环头后算法即可结束，最后一个环的环头是最大的环头，即 <span class="math inline">\(q(1)\)</span>，所有大于 <span class="math inline">\(q(1)\)</span> 的数都不会被主循环执行，因此第 <span class="math inline">\(4\)</span> 行和第 <span class="math inline">\(7\)</span> 行的执行次数由 <span class="math inline">\(n\)</span> 减为 <span class="math inline">\(q(1)\)</span>，平均减少次数为 <span class="math inline">\(0+1+\cdots+n-1=\frac{n(n-1)}{2}\)</span>。第 <span class="math inline">\(6\)</span> 行的执行次数，即 <span class="math inline">\(a\)</span> 的值，减少的量为 <span class="math inline">\(\displaystyle\sum_{q(i)&gt;q(1)}\sum_{j=i+1}^{n}y_{ij}\)</span>，其平均值为 <span class="math inline">\(\displaystyle \sum_{2\leqslant i&lt;j\leqslant n}\frac{1}{(j-i)(j-i+1)}=\sum_{r=2}^n \frac{n-r}{r(r-1)}=n-1-H_{n-1}\)</span>。因此，此优化对复杂度的改进不大。</p>
+<h3 id="额外条件下的算法改进">额外条件下的算法改进</h3>
+<p>假如我们得到了排列 <span class="math inline">\(p\)</span> 的反函数 <span class="math inline">\(p^{-1}\)</span>，我们可以对算法做一个改进。判断点 <span class="math inline">\(k\)</span> 是不是环头时依次检查 <span class="math inline">\(p(k),p^{-1}(k),p(p(k)),p^{-1}(p^{-1}(k)),\cdots\)</span>，即同时向前后两个方向检查。惊人的是，通过这样的改进能使算法的最坏时间复杂度达到 <span class="math inline">\(O(n\log n)\)</span>。</p>
+<p>我们设 <span class="math inline">\(f(n)\)</span> 代表在一个长度为 <span class="math inline">\(n\)</span> 的环中判断出所有非环头元素所花的总步数，其中同时探查 <span class="math inline">\(p^k(j)\)</span> 与 <span class="math inline">\(p^{-k}(j)\)</span> 被视为一步。则 <span class="math inline">\(f(1)=0\)</span>，<span class="math inline">\(\displaystyle f(n)=\max_{1\leqslant k&lt;n}\{\min(k,n-k)+f(k)+f(n-k)\}\)</span>。假设环中最小元素（环头）到第二小元素的距离为 <span class="math inline">\(k\)</span>，则判断第二小元素需要 <span class="math inline">\(min(k,n-k)\)</span> 步，对于最小元素到第二小元素之间的 <span class="math inline">\(k-1\)</span> 个数，以及第二小元素到最小元素之间的 <span class="math inline">\(n-k-1\)</span> 个数，考虑判断它们所需的步数。对这两部分，我们可以分别将最小元素与第二小元素合并，连成一个长度为 <span class="math inline">\(k\)</span> 与 <span class="math inline">\(n-k\)</span> 的环，判断的步数分别为 <span class="math inline">\(f(k)\)</span> 与 <span class="math inline">\(f(n-k)\)</span>，因此总步数为 <span class="math inline">\(min(k,n-k)+f(k)+f(n-k)\)</span>，得到了 <span class="math inline">\(f(n)\)</span> 的递推公式。</p>
+<p>这个递推式的解非常有趣，<span class="math inline">\(\displaystyle f(n)=\sum_{i=0}^{n-1}v(i)\)</span>，其中 <span class="math inline">\(v(i)\)</span> 表示 <span class="math inline">\(i\)</span> 的二进制表示中 <span class="math inline">\(1\)</span> 的个数。不知道这个解是怎么想出来的，其正确性可以用数学归纳法证明，但也十分复杂，论文也没有详细描述，此处略去。</p>
+<p>由 <span class="math inline">\(f(2^k)=\)</span> 所有 <span class="math inline">\(k\)</span> 位二进制数中 <span class="math inline">\(1\)</span> 的个数 <span class="math inline">\(=k2^{k-1}\)</span>，可得 <span class="math inline">\(f(n)=O(n\log n)\)</span>.</p>
+<h2 id="选第-t-大selecting-the-tth-largest">选第 <span class="math inline">\(t\)</span> 大(Selecting the <span class="math inline">\(t\)</span>th Largest)</h2>
+<h3 id="题目描述-1">题目描述</h3>
+<p>给定数组 <span class="math inline">\(x[1..n]\)</span> 与正整数 <span class="math inline">\(t\)</span>，求数组中的第 <span class="math inline">\(t\)</span> 大的数。</p>
+<h3 id="算法描述-1">算法描述</h3>
+<p>在算法设计与分析课程内容中我们已经学习了一种最坏情况下 <span class="math inline">\(O(n)\)</span> 时间复杂度的算法，这里我们考虑该算法的一个简化版。随机选择一个数，将其他数按照比它大或比它小分成两部分，其中 <span class="math inline">\(x[1..k-1]\)</span> 的数比它大，<span class="math inline">\(x[k+1..n]\)</span> 的数比它小，然后按照第 <span class="math inline">\(t\)</span> 大的数在的范围递归查找。具体来说，若 <span class="math inline">\(k=t\)</span>，则算法结束；若 <span class="math inline">\(t&lt;k\)</span>，则在 <span class="math inline">\(x[1..k-1]\)</span> 中找第 <span class="math inline">\(t\)</span> 大；若 <span class="math inline">\(t&gt;k\)</span>，则在 <span class="math inline">\(x[k+1..n]\)</span> 找第 <span class="math inline">\(t-k\)</span> 大。</p>
+<h3 id="复杂度分析-1">复杂度分析</h3>
+<p>由于随机选取的数可能划分不均，最坏情况的复杂度可能达到 <span class="math inline">\(O(n^2)\)</span>，但这种情况的概率是很小的。为了计算平均复杂度，设 <span class="math inline">\(C_{n,t}\)</span> 表示在 <span class="math inline">\(n\)</span> 个数里选第 <span class="math inline">\(t\)</span> 大的数时的平均比较次数。则当 <span class="math inline">\(n&gt;1\)</span> 时有 <span class="math display">\[
+\begin{aligned}
+C_{n,t}=n-1+\frac{1}{n}(A_{n,t}+B_{n,t})
+\end{aligned}
+\]</span> 其中 <span class="math display">\[
+\begin{aligned}
+A_{n,t}&amp;=C_{n-1,t-1}+C_{n-2,t-2}+\cdots+C_{n-t+1,1},\\
+B_{n,t}&amp;=C_{t,t}+C_{t+1,t}+\cdots+C_{n-1,t}.
+\end{aligned}
+\]</span></p>
+<p>可以观察得到 <span class="math inline">\(A_{n+1,t+1}=A_{n,t}+C_{n,t}\)</span> 与 <span class="math inline">\(B_{n+1,t}=B_{n,t}+C_{n,t}\)</span>.</p>
+<p>因此可以利用差消法得到 <span class="math display">\[
+\begin{aligned}
+&amp;(n+1)C_{n+1,t+1}-nC_{n,t+1}-nC_{n,t}+(n-1)C_{n-1,t}\\
+=&amp;(n+1)n-n(n-1)-n(n-1)+(n-1)(n-2)\\
+&amp;+A_{n+1,t+1}-A_{n,t+1}-A_{n,t}+A_{n-1,t}\\
+&amp;+B_{n+1,t+1}-B_{n,t+1}-B_{n,t}+B_{n-1,t}\\
+=&amp;2+C_{n,t}-C_{n-1,t}+C_{n,t+1}-C_{n-1,t}.
+\end{aligned}
+\]</span> 因此 <span class="math display">\[
+\begin{aligned}
+C_{n+1,t+1}-C_{n,t+1}-C_{n,t}+C_{n-1,t}&amp;=\frac{2}{n+1}\\
+(C_{n+1,t+1}-C_{n,t})-(C_{n,t+1}-C_{n-1,t})&amp;=\frac{2}{n+1}\\
+\end{aligned}
+\]</span></p>
+<p>方便起见，我们令边界值 <span class="math inline">\(C_{n,1}=C_{n,n}=n-1\)</span>，迭代可得（<strong>注意此处与论文不同</strong>） <span class="math display">\[
+\begin{aligned}
+C_{n+1,t+1}-C_{n,t}&amp;=\sum_{k=t+1}^{n}\frac{2}{k+1}+C_{t+1,t+1}-C_{t,t}\\
+&amp;=2(H_{n+1}-H_{t+1})+1
+\end{aligned}
+\]</span> 再次迭代可得 <span class="math display">\[
+C_{n,t}=\sum_{k=2}^{t}(2H_{n-t+k}-2H_{k}+1)+C_{n-t+1,1}
+\]</span> 为了计算此式我们需要计算 <span class="math display">\[
+\begin{aligned}
+\sum_{k=0}^{n}H_k=&amp;H_{n}-\frac{1}{n}-\frac{1}{n-1}-\cdots-\frac{1}{1}\\
++&amp;H_{n}-\frac{1}{n}-\frac{1}{n-1}-\cdots-\frac{1}{2}\\
+\vdots&amp;\\
++&amp;H_n-\frac{1}{n}\\
++&amp;H_n\\
+=&amp;(n+1)H_n-n\cdot\frac{1}{n}-(n-1)\frac{1}{n-1}-\cdots-1\cdot\frac{1}{1}\\
+=&amp;(n+1)H_n-n
+\end{aligned}
+\]</span> 因此可以得到 <span class="math display">\[
+\begin{aligned}
+C_{n,t}&amp;=2(n+1)H_n-2(t+1)H_t-2(n-t+2)H_{n-t+1}+n+3\\
+&amp;=2(t+1)(H_n-H_t)+2(n-t)(H_n-H_{n-t+1})-4H_{n-t+1}+n-3\\
+&amp;\leqslant2(t+1)\frac{n-t}{t+1}+2(n-t)\frac{t-1}{n-t}-4H_{n-t+1}+n-3\\
+&amp;=3n-1-4H_{n-t+1}
+\end{aligned}
+\]</span> 因此算法的平均时间复杂度是 <span class="math inline">\(O(n)\)</span>.</p>
+<h2 id="总结">总结</h2>
+<p>以上的两个问题的分析是为了展示什么是算法分析，但由于问题过于复杂可能会模糊了 Knuth 想要表达的重点，最后他总结了他认为最重要的几点：</p>
+<ul>
+<li>算法分析对计算机科学很重要</li>
+<li>算法分析与离散数学密切相关</li>
+<li>算法分析正在形成科学方法</li>
+<li>算法分析领域还有很多问题没有解决</li>
+</ul>
+
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+
+
+
+
+
+    <hr />
+    <div id="gitalk_thread"></div>
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:i@sjj118.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/sjj118" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+
+                    
+                        <li>
+                            <a href="https://www.zhihu.com/people/sjj118" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-1x fa-inverse">知</i>
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; 2020 sjj118. All Rights Reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Comments -->
+
+    <!-- Disqus Comments -->
+    
+
+    <!-- Gitment Comments -->
+    
+
+
+    <!-- Gitalk Comments -->
+    
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.js"></script>
+        <script> 
+            const gitalk = new Gitalk({
+                clientID: '5099afc263addd98be13',
+                clientSecret: '79401012bcd210085b59e2d0985924a7f745369e',
+                repo: 'sjj118.github.io',
+                owner: 'sjj118',
+                admin: ['sjj118'],
+                distractionFreeMode: false
+            })
+            gitalk.render('gitalk_thread')
+        </script>
+    
+
+
+<!-- anchor-js -->
+
+    <script src="https://cdn.bootcss.com/anchor-js/4.1.0/anchor.min.js"></script>
+    <script>
+        anchors.options = {
+            placement: 'left',
+        };
+        anchors.add('.anchor-body h1, .anchor-body h2, .anchor-body h3, .anchor-body h4, .anchor-body h5, .anchor-body h6');
+    </script>
+
+
+<!-- Side Catalog 
+
+    <script type="text/javascript">
+        function generateCatalog (selector) {
+            var P = $('div.post-body'),a,n,t,l,i,c;
+            a = P.find('h1,h2,h3,h4,h5,h6');
+            a.each(function () {
+                n = $(this).prop('tagName').toLowerCase();
+                i = "#"+$(this).prop('id');
+                t = $(this).text();
+                c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+                l = $('<li class="'+n+'_nav"></li>').append(c);
+                $(selector).append(l);
+            });
+            return true;    
+        }
+        generateCatalog(".catalog-body");
+        // toggle side catalog
+        $(".catalog-toggle").click((function(e){
+            e.preventDefault();
+            $('.side-catalog').toggleClass("fold")
+        }))
+        /*
+         * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+         * Fork by Hux to support padding
+         */
+        async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+            $('.catalog-body').onePageNav({
+                currentClass: "active",
+                changeHash: !1,
+                easing: "swing",
+                filter: "",
+                scrollSpeed: 700,
+                scrollOffset: 0,
+                scrollThreshold: .2,
+                begin: null,
+                end: null,
+                scrollChange: null,
+                padding: 80
+            });
+        });
+    </script>
+
+-->
+
+
+</body>
+
+</html>

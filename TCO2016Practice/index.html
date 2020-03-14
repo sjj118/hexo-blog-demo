@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="TCO2016 练习记录"/>
+        <meta property="og:title" content="TCO2016 练习记录">
     
 
     <!-- jquery -->
@@ -91,21 +91,21 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="the blog of sjj118" />
+        <meta property="og:description" content="the blog of sjj118">
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="sjj118&#39;s Blog"/>
+    <meta property="og:site_name" content="sjj118&#39;s Blog">
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
     
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary">
     
 
     <!-- Title -->
@@ -113,7 +113,7 @@
     <title>TCO2016 练习记录 - sjj118&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -134,7 +134,7 @@
     <![endif]-->
 
     <!-- Gallery -->
-    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdn.staticfile.org/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet">
 
     <!-- Google Analytics -->
     
@@ -245,7 +245,7 @@
 <p>事实上，这个策略还能判断一个路径前缀是否有解，比如我们假设第一步跳到节点4，然后再按照这种策略判断是否有解，如果无解代表第一步不能跳到节点4。于是我们可以依次枚举每一位跳到哪个节点，也就是按位贪心就好了。</p>
 <h2 id="b-settingshield">1B SettingShield</h2>
 <h4 id="description-1">Description</h4>
-<p>给一个数组a，给出h个区间<span class="math">\([l_i,r_i]\)</span>，对于每个区间可以花费p的代价使得a数组中该区间的每个数字减少p，另外还可以花费p*t的代价使整个a数组都减少p，求最小的代价使a数组每一个元素都非正。</p>
+<p>给一个数组a，给出h个区间<span class="math inline">\([l_i,r_i]\)</span>，对于每个区间可以花费p的代价使得a数组中该区间的每个数字减少p，另外还可以花费p*t的代价使整个a数组都减少p，求最小的代价使a数组每一个元素都非正。</p>
 <h4 id="solution-1">Solution</h4>
 <p>首先假设我们已经确定了整个数组减少x，那么我们考虑怎么最小化剩余的代价。这是一个简单的贪心：首先我们把被其他区间包含的区间都去掉，接下来把所有区间从左到右排序。如果有某一个点的a[i]&gt;x且不被任意区间包含，则无解。接下来从左到右依次考虑每一个区间，找到所有在这个区间内且不在下一个区间内的数中的最大值，把这个区间的数字都剪去最大值。易证这样一定是最小的。</p>
 <p>接下来我们就要确定x。我们设g(x)=全局减去x时剩下的最小代价，f(x)=g(x)-g(x+1)。如果f(x)大于t，则说明x+1比x更优。可以证明f(x)是单调不升的（我也不会证，不过感觉是对的。。），于是答案是凸的，可以三分。</p>
@@ -326,7 +326,7 @@
                         </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; 2019 sjj118. All Rights Reserved.<br></p>
+                <p class="copyright text-muted">Copyright &copy; 2020 sjj118. All Rights Reserved.<br></p>
             </div>
         </div>
     </div>
